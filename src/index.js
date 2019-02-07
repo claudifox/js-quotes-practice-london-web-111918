@@ -11,16 +11,12 @@ const editFormSubmitBtn = document.getElementById('edit-submit')
 const sortButton = document.querySelector('.sort-alphabetically')
 const baseUrl = 'http://localhost:3000/quotes'
 
-
-
-// Holds the data the app may need
 const state = {
   quotes: [],
   sort: false,
   currentQuote: null
 }
 
-// QUESTION: Sort doesn't seem to be working, when just have alphabetically it does but doesn't show them not
 const updateSort = () => {
   sortButton.innerText = state.sort ? "Sort Authors Alphabetically: ON" : "Sort Authors Alphabetically: OFF"
 }
@@ -101,7 +97,6 @@ const onEditClick = quote => {
 const onDeleteClick = quote => {
   event.preventDefault()
   deleteQuote(quote).then(() => getQuotes().then(renderQuotes))
-
 }
 
 const initialize = () => {
@@ -114,7 +109,6 @@ const initialize = () => {
   addSortListener()
 }
 
-// Get the form to add a new quote
 newQuoteForm.addEventListener('submit', event => {
   event.preventDefault()
 
@@ -155,14 +149,6 @@ const sortAlphabetically = quotes => {
   })
 }
 
-// const sortById = quotes => {
-//   quotes.sort(function (a, b) {
-//     return a.id - b.id
-//   })
-// }
-// API STUFF //
-
-// Creates a quote on the server
 const createQuote = quote => {
   return fetch(baseUrl, {
     method: 'POST',
@@ -199,7 +185,6 @@ const deleteQuote = quote => {
   })
 }
 
-// Get quotes from server
 const getQuotes = () => {
   return fetch(baseUrl)
     .then(response => response.json())
