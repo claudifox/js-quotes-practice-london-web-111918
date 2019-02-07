@@ -10,23 +10,40 @@
   <title>Motivation</title>
 </head>
 <body class='container center'>
-  <h1>My favorite quotes:</h1>
+    <h1>My favorite quotes:</h1>
+    <hr>
   <div>
-    <ul id="quote-list">
-    </ul>
-  </div>
-  <hr>
-  <div>
+    <h4 class='center'>Create A New Quote!</h4>
     <form id="new-quote-form">
       <div class="form-group">
-        <label for="new-quote">New Quote</label>
         <input type="text" class="form-control" id="new-quote" placeholder="Learn. Love. Code.">
       </div>
       <div class="form-group">
         <label for="Author">Author</label>
         <input type="text" class="form-control" id="author" placeholder="Flatiron School">
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <input type="submit" class="btn btn-primary"></input>
+    </form>
+  </div>
+  <hr>
+  <button class="sort-alphabetically"></button>
+  <hr>
+  <div>
+    <ul id="quote-list">
+    </ul>
+  </div>
+  <hr>
+  <div class="margin flex">
+    <h4 class='center'>Edit Existing Quotes</h4>
+    <form id="edit-quote-form">
+      <div class="form-group">
+        <input type="text" class="form-control" id="edit-quote" placeholder="Quote">
+      </div>
+      <div class="form-group">
+        <label for="Author">Author</label>
+        <input type="text" class="form-control" id="edit-author" placeholder="Author">
+      </div>
+      <input type="submit" id="edit-submit" class="btn btn-primary"></input>
     </form>
   </div>
   <script src="src/index.js"></script>
