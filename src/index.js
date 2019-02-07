@@ -147,7 +147,6 @@ editQuoteForm.addEventListener('submit', event => {
   editQuoteForm.reset()
 
   editQuote(quote).then(() => getQuotes().then(renderQuotes))
-  console.log('form submitted')
 })
 
 const sortAlphabetically = quotes => {
